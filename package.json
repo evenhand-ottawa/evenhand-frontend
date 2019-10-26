@@ -1,10 +1,23 @@
 {
 	"scripts": {
-		"start": "parcel src/index.html",
+		"lint": "eslint src/**/*.jsx",
+		"format": "npm run lint -- --fix",
+		"start": "concurrently -k 'parcel src/index.html' 'nodemon -e jsx -w src -x \"npm run format\"'",
 		"build": "parcel build src/index.html"
 	},
 	"devDependencies": {
-		"parcel": "^1.12.4"
+		"babel-eslint": "^10.0.3",
+		"concurrently": "^5.0.0",
+		"eslint": "^6.3.0",
+		"eslint-plugin-import": "^2.18.2",
+		"eslint-plugin-node": "^10.0.0",
+		"eslint-plugin-prettier": "^3.1.0",
+		"eslint-plugin-promise": "^4.2.1",
+		"eslint-plugin-react": "^7.16.0",
+		"eslint-plugin-standard": "^4.0.1",
+		"nodemon": "^1.19.4",
+		"parcel": "^1.12.4",
+		"prettier": "^1.18.2"
 	},
 	"dependencies": {
 		"bootstrap": "^4.3.1",
