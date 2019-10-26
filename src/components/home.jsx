@@ -19,14 +19,7 @@ export function Home() {
 
 	return (
 		<React.Fragment>
-			<div
-				className="bg-white bg-curve send-to-back w-100"
-				css={css`
-					position: absolute;
-					top: 0;
-					right: 0;
-				`}
-			>
+			<div className="bg-white bg-curve send-to-back w-100 absolute-top">
 				<div className="container">
 					<div className="row">
 						<div className="col-6 offset-6 text-right">
