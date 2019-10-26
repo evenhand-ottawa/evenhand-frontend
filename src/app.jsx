@@ -1,12 +1,12 @@
 import 'jquery'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './css/app.scss'
-
+import '@fortawesome/fontawesome-free/css/all.min.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
+import './css/app.scss'
 import { Home } from './components/home'
 import { Search } from './components/search'
 
