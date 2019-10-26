@@ -65,14 +65,12 @@ h4 {
 	border-color: $color-primary;
 }
 
-.btn-secondary {
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus,
+.active .btn-primary,
+.btn-primary.active {
 	background-color: $color-secondary;
-	border-color: $color-secondary;
-}
-
-.btn-outline-secondary {
-	color: $color-secondary;
-	background-color: transparent;
 	border-color: $color-secondary;
 }
 
@@ -87,4 +85,29 @@ h4 {
 input[type="text"].form-control {
 	border-radius: 0;
 	border: none;
+}
+
+.card {
+	border: none;
+	box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+}
+
+.badge {
+	padding: .5rem;
+}
+
+.badge-secondary {
+	border-color: $color-secondary;
+	background-color: $color-secondary;
+}
+
+.bg-curve {
+	background-image: url(../images/curve.svg);
+	background-position: right center;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+
+.send-to-back {
+    z-index: -1;
 }

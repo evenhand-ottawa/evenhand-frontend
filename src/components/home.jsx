@@ -1,40 +1,89 @@
+/** @jsx jsx */
+
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { jsx, css } from '@emotion/core'
+import styled from '@emotion/styled'
 
-import { Speaker } from '../models/speaker'
-import { SpeakerCard } from './speaker-card'
-import { useAsync } from '../state'
+import imgPerson from '../images/person-home-2x.png'
+
+const BigNumber = styled.h1`
+	font-size: 10rem;
+	color: rgba(47, 102, 92, 0.74);
+	line-height: 1;
+	margin-top: 2rem;
+`
 
 export function Home() {
 	const [query, setQuery] = useState('')
-	const speakersList = useAsync(Speaker.getTrending)
 
 	return (
-		<>
-			<div className="bg-secondary p-5">
+		<React.Fragment>
+			<div
+				className="bg-white bg-curve send-to-back w-100"
+				css={css`
+					position: absolute;
+					top: 0;
+					right: 0;
+				`}
+			>
 				<div className="container">
-					<div className="row p-5">
-						<div className="col text-center">
-							<h1 className="text-white mb-n3">EvenHand</h1>
-							<h3 className="text-white font-weight-normal mb-5">
-								We enable event organizers to create inclusive speaker events.
-							</h3>
+					<div className="row">
+						<div className="col-6 offset-6 text-right">
+							<img
+								src={imgPerson}
+								css={css`
+									max-height: 100vh;
+								`}
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
 
-							<div className="d-flex">
-								<input
-									type="text"
-									className="form-control col mr-3"
-									placeholder="Machine learning"
-									value={query}
-									onChange={evt => setQuery(evt.target.value)}
-								/>
+			<div className="container py-5">
+				<div className="row py-5">
+					<div className="col-6">
+						<p
+							css={css`
+								line-height: 1.2;
+								font-size: 3rem;
+							`}
+						>
+							Creating meaningful conversations across Canada.
+						</p>
+					</div>
+				</div>
 
+				<div className="row pb-5 mb-5">
+					<div className="overflow-hidden p-4 rounded-lg">
+						<p className="lead font-weight-bold pl-4">Find your speaker.</p>
+						<div
+							className="input-group shadow-sm overflow-hidden"
+							css={css`
+								border-radius: 2rem;
+							`}
+						>
+							<input
+								css={css`
+									border-top-left-radius: 2rem !important;
+									border-bottom-left-radius: 2rem !important;
+								`}
+								type="text"
+								className="form-control border"
+								placeholder="Search a topic"
+								value={query}
+								onChange={evt => setQuery(evt.target.value)}
+							/>
+							<div className="input-group-append">
 								<Link
 									to={`/search?q=${encodeURIComponent(query)}`}
-									className="btn btn-primary col-auto"
+									className="btn btn-primary"
+									css={css`
+										padding-left: 1.75rem;
+									`}
 								>
-									<i className="fas fa-search mr-2" />
-									Search
+									<i className="fas fa-search" />
 								</Link>
 							</div>
 						</div>
@@ -42,39 +91,42 @@ export function Home() {
 				</div>
 			</div>
 
-			<div className="bg-white p-5">
-				<div className="container">
+			<div className="mt-n5 mb-5">
+				<div className="container bg-white shadow px-5 py-5">
 					<div className="row">
-						<div className="col text-center">
-							<h2>About us</h2>
-							<p className="lead">We do things!</p>
+						<div className="col">
+							<h2 className="text-center mb-5">How it works</h2>
 						</div>
 					</div>
-				</div>
-			</div>
 
-			<div className="p-5">
-				<div className="container">
-					<div className="row">
-						<div className="col text-center">
-							<h2 className="mb-5">Speakers</h2>
-							<div className="row">
-								{speakersList.status === 'inprogress' && (
-									<div className="spinner-border text-primary" role="status">
-										<span className="sr-only">Loading...</span>
-									</div>
-								)}
-								{speakersList.status === 'success' &&
-									speakersList.result.map(speaker => (
-										<div className="col" key={speaker.id}>
-											<SpeakerCard speaker={speaker} />
-										</div>
-									))}
-							</div>
+					<div className="row py-4">
+						<div className="col-auto">
+							<BigNumber>01</BigNumber>
+						</div>
+						<div className="col d-flex align-items-center">
+							<h4 className="col d-flex align-items-center">Do things</h4>
+						</div>
+					</div>
+
+					<div className="row py-4">
+						<div className="col-auto offset-1">
+							<BigNumber>02</BigNumber>
+						</div>
+						<div className="col d-flex align-items-center">
+							<h4 className="col d-flex align-items-center">Do things</h4>
+						</div>
+					</div>
+
+					<div className="row py-4">
+						<div className="col-auto">
+							<BigNumber>03</BigNumber>
+						</div>
+						<div className="col d-flex align-items-center">
+							<h4 className="col d-flex align-items-center">Do things</h4>
 						</div>
 					</div>
 				</div>
 			</div>
-		</>
+		</React.Fragment>
 	)
 }

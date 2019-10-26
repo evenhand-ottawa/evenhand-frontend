@@ -1,34 +1,63 @@
 import PropTypes from 'prop-types'
 
+const topics = [
+	'Machine Learning',
+	'Diversity Inclusion',
+	'JavaScript',
+	'Politics',
+	'Pokemon',
+]
+
+function randomTopics() {
+	return [...new Array(3 + Math.round(Math.random() * 2))].map(() => {
+		return topics[Math.floor(topics.length * Math.random())]
+	})
+}
+
 export const Speaker = {
 	search: () =>
 		Promise.resolve([
 			{
-				id: 0,
+				id: '0',
 				name: 'Jane Smith',
 			},
 			{
-				id: 1,
+				id: '1',
 				name: 'Someone else',
 			},
 			{
-				id: 2,
+				id: '2',
 				name: 'Another Person',
 			},
 		]),
 	getTrending: () =>
 		Promise.resolve([
 			{
-				id: 0,
+				id: '0',
 				name: 'Jane Smith',
+				image: `https://randomuser.me/api/portraits/women/${Math.round(
+					Math.random() * 80,
+				)}.jpg`,
+				speaker_topics: randomTopics(),
+				tagline: 'Tagline',
 			},
 			{
-				id: 1,
+				id: '1',
 				name: 'Someone else',
+				image: `https://randomuser.me/api/portraits/women/${Math.round(
+					Math.random() * 80,
+				)}.jpg`,
+				speaker_topics: randomTopics(),
+				tagline: 'Tagline',
 			},
 			{
-				id: 2,
+				id: '2',
 				name: 'Another Person',
+				image: `https://randomuser.me/api/portraits/women/${Math.round(
+					Math.random() * 80,
+				)}.jpg`,
+				speaker_topics: randomTopics(),
+				tagline: 'Tagline',
 			},
 		]),
 }
