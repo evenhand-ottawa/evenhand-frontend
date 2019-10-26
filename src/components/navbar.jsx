@@ -13,7 +13,7 @@ export function NavBar() {
 				</a>
 
 				<form className="form-inline">
-					<button className="btn btn-success" type="button">
+					<button className="btn btn-outline-primary" type="button">
 						I Am a Speaker
 					</button>
 				</form>
