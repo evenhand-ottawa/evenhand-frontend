@@ -1,10 +1,15 @@
 import React from 'react'
 
+var footerStyle = {
+    backgroundColor: 'white',
+    
+  };
+
 export function Footer() {
 	return (
 
         <footer>
-            <div className="bg-white">
+            <div style={footerStyle}>
                 <div className="container">
                     <h2>EvenHand Footer</h2>
                 </div>
