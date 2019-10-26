@@ -74,6 +74,15 @@ h4 {
 	border-color: $color-secondary;
 }
 
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:focus,
+.active .btn-outline-primary,
+.btn-outline-primary.active {
+	background-color: $color-primary;
+	border-color: $color-primary;
+}
+
 .text-primary {
 	color: $color-primary !important;
 }
