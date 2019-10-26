@@ -3,15 +3,13 @@
 		"lint": "eslint src/**/*.jsx",
 		"format": "npm run lint -- --fix",
 		"serve": "parcel src/index.html",
-		"watchformat": "nodemon -e jsx -w src -x 'npm run format'",
-		"start": "concurrently -k 'npm run serve' 'npm run watchformat'",
+		"start": "parcel src/index.html",
 		"build": "parcel build src/index.html"
 	},
 	"devDependencies": {
 		"parcel": "^1.12.4",
 		"sass": "^1.23.1",
 		"babel-eslint": "^10.0.3",
-		"concurrently": "^5.0.0",
 		"eslint": "^6.3.0",
 		"eslint-plugin-import": "^2.18.2",
 		"eslint-plugin-node": "^10.0.0",
@@ -19,7 +17,6 @@
 		"eslint-plugin-promise": "^4.2.1",
 		"eslint-plugin-react": "^7.16.0",
 		"eslint-plugin-standard": "^4.0.1",
-		"nodemon": "^1.19.4",
 		"prettier": "^1.18.2"
 	},
 	"dependencies": {
