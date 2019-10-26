@@ -2,7 +2,9 @@
 	"scripts": {
 		"lint": "eslint src/**/*.jsx",
 		"format": "npm run lint -- --fix",
-		"start": "concurrently -k 'parcel src/index.html' 'nodemon -e jsx -w src -x \"npm run format\"'",
+		"serve": "parcel src/index.html",
+		"watchformat": "nodemon -e jsx -w src -x 'npm run format'",
+		"start": "concurrently -k 'npm run serve' 'npm run watchformat'",
 		"build": "parcel build src/index.html"
 	},
 	"devDependencies": {
