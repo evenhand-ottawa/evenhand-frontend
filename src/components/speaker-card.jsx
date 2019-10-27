@@ -7,7 +7,9 @@ export function SpeakerCard({ speaker }) {
 		<div className="card p-5 w-100 h-100 shadow-sm">
 			<div className="card-body p-0 d-flex flex-column justify-content-center align-items-center text-center rounded-lg">
 				<img src={speaker.image} className="img-fluid rounded-circle" />
-				<p className="mt-5 lead text-serif text-primary">{speaker.name}</p>
+				<p className="mt-5 lead text-serif text-primary">
+					{speaker.first_name} {speaker.last_name}
+				</p>
 				<p className="text-dark text-uppercase mb-0 font-weight-bold">
 					Creative Director
 				</p>

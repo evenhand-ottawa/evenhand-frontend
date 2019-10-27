@@ -36,7 +36,37 @@ function makeItems(min, max, map) {
 }
 
 export const Speaker = {
-	search: () => Promise.resolve(makeItems(15, 20, () => makeUser())),
+	search: ({ query }) =>
+		fetch(
+			`https://F1BH41FSYU-dsn.algolia.net/1/indexes/Speaker?query=${encodeURIComponent(
+				query,
+			)}`,
+			{
+				headers: {
+					'X-Algolia-API-Key': '60c7fb3e438d94bfb1eaef7dd116c847',
+					'X-Algolia-Application-Id': 'F1BH41FSYU',
+				},
+			},
+		)
+			.then(res => res.json())
+			.then(results => {
+				return results.hits.map(result => ({
+					...result,
+					...result.user,
+					id: String(result.id),
+					image: images[result.id % images.length],
+					speaker_languages: [],
+					speaker_topics: makeItems(3, 5, () =>
+						pickRandom([
+							'Machine Learning',
+							'Diversity Inclusion',
+							'JavaScript',
+							'Politics',
+							'Pokemon',
+						]),
+					),
+				}))
+			}),
 	getTrending: () => Promise.resolve(makeItems(3, 5, () => makeUser())),
 }
 

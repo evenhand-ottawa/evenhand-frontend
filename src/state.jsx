@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import qs from 'qs'
 
 const kPromise = Symbol('kPromise')
 
@@ -10,6 +11,26 @@ function useReducer(reducer, initialState) {
 		action => {
 			const nextState = reducer(state, action)
 			setState(nextState)
+		},
+	]
+}
+
+export function useQueryParam(name, defaultValue) {
+	const searchParams = qs.parse(location.search.substr(1))
+	const [state, setState] = useState(
+		searchParams.hasOwnProperty(name) ? searchParams[name] : defaultValue,
+	)
+	return [
+		state,
+		newValue => {
+			const searchParams = qs.parse(location.search.substr(1))
+			searchParams[name] = newValue
+			history.replaceState(
+				null,
+				document.title,
+				location.pathname + '?' + qs.stringify(searchParams),
+			)
+			setState(newValue)
 		},
 	]
 }

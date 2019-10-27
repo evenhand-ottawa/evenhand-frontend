@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { Speaker } from '../models/speaker'
-import { useAsyncAction } from '../state'
+import { useAsyncAction, useQueryParam } from '../state'
 import { SpeakerCard } from './speaker-card'
 
 export function Search() {
 	const params = useParams()
-	const [query, setQuery] = useState(params.query || '')
+	const [query, setQuery] = useQueryParam('q', params.query || '')
 
 	const [searchState, searchActions] = useAsyncAction(
 		() =>
@@ -32,7 +32,7 @@ export function Search() {
 							<label className="font-weight-bold">
 								Search by topic or industry
 							</label>
-							<div className="input-group input-group-rounded shadow-sm rounded-lg">
+							<div className="input-group shadow-sm">
 								<input
 									type="text"
 									className="form-control"
