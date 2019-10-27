@@ -116,13 +116,16 @@ export function Home() {
 						</div>
 
 						<div className="row py-4">
-							<div className="col-auto">
+							<div className="col"></div>
+							<div className="col">
 								<BigNumber>03</BigNumber>
-							</div>
-							<div className="col d-flex align-items-center">
 								<h4 className="col d-flex align-items-center">
 									Connect with fellow speakers and organziers
 								</h4>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+									do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								</p>
 							</div>
 						</div>
 					</div>
