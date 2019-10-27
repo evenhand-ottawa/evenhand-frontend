@@ -7,7 +7,7 @@ import styled from '@emotion/styled'
 
 import imgPerson from '../images/person-home-2x.png'
 
-const BigNumber = styled.h1`
+const BigNumber = styled.p`
 	font-size: 10rem;
 	color: rgba(47, 102, 92, 0.74);
 	line-height: 1;
@@ -86,7 +86,7 @@ export function Home() {
 
 			<div className="bg-white">
 				<div className="mt-n5 mb-5">
-					<div className="container bg-white shadow px-5 py-5">
+					<div className="container bg-white shadow px-5 py-5 rounded-corners">
 						<div className="row">
 							<div className="col">
 								<h2 className="text-center mb-5">How it works</h2>
@@ -98,7 +98,9 @@ export function Home() {
 								<BigNumber>01</BigNumber>
 							</div>
 							<div className="col d-flex align-items-center">
-								<h4 className="col d-flex align-items-center">Do things</h4>
+								<h4 className="col d-flex align-items-center">
+									Sign up and create a profile
+								</h4>
 							</div>
 						</div>
 
@@ -107,7 +109,9 @@ export function Home() {
 								<BigNumber>02</BigNumber>
 							</div>
 							<div className="col d-flex align-items-center">
-								<h4 className="col d-flex align-items-center">Do things</h4>
+								<h4 className="col d-flex align-items-center">
+									Add your details to our speaker list
+								</h4>
 							</div>
 						</div>
 
@@ -116,7 +120,9 @@ export function Home() {
 								<BigNumber>03</BigNumber>
 							</div>
 							<div className="col d-flex align-items-center">
-								<h4 className="col d-flex align-items-center">Do things</h4>
+								<h4 className="col d-flex align-items-center">
+									Connect with fellow speakers and organziers
+								</h4>
 							</div>
 						</div>
 					</div>
