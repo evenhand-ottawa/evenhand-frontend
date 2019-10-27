@@ -64,6 +64,16 @@ export function Search() {
 					</div>
 				)}
 
+				{searchState.result && searchState.result.length === 0 && (
+					<div className="row">
+						<div className="col">
+							<h5 className="text-center py-5">
+								No search results. Please try expanding your query.
+							</h5>
+						</div>
+					</div>
+				)}
+
 				{searchState.result && (
 					<div className="row">
 						{searchState.result.map(speaker => (
