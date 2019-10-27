@@ -34,7 +34,7 @@ export function Home() {
 				</div>
 			</div>
 
-			<div className="container py-5">
+			<div className="container py-5 mt-5">
 				<div className="row py-5">
 					<div className="col-6">
 						<p
@@ -84,38 +84,40 @@ export function Home() {
 				</div>
 			</div>
 
-			<div className="mt-n5 mb-5">
-				<div className="container bg-white shadow px-5 py-5">
-					<div className="row">
-						<div className="col">
-							<h2 className="text-center mb-5">How it works</h2>
+			<div className="bg-white">
+				<div className="mt-n5 mb-5">
+					<div className="container bg-white shadow px-5 py-5">
+						<div className="row">
+							<div className="col">
+								<h2 className="text-center mb-5">How it works</h2>
+							</div>
 						</div>
-					</div>
 
-					<div className="row py-4">
-						<div className="col-auto">
-							<BigNumber>01</BigNumber>
+						<div className="row py-4">
+							<div className="col-auto">
+								<BigNumber>01</BigNumber>
+							</div>
+							<div className="col d-flex align-items-center">
+								<h4 className="col d-flex align-items-center">Do things</h4>
+							</div>
 						</div>
-						<div className="col d-flex align-items-center">
-							<h4 className="col d-flex align-items-center">Do things</h4>
-						</div>
-					</div>
 
-					<div className="row py-4">
-						<div className="col-auto offset-1">
-							<BigNumber>02</BigNumber>
+						<div className="row py-4">
+							<div className="col-auto offset-1">
+								<BigNumber>02</BigNumber>
+							</div>
+							<div className="col d-flex align-items-center">
+								<h4 className="col d-flex align-items-center">Do things</h4>
+							</div>
 						</div>
-						<div className="col d-flex align-items-center">
-							<h4 className="col d-flex align-items-center">Do things</h4>
-						</div>
-					</div>
 
-					<div className="row py-4">
-						<div className="col-auto">
-							<BigNumber>03</BigNumber>
-						</div>
-						<div className="col d-flex align-items-center">
-							<h4 className="col d-flex align-items-center">Do things</h4>
+						<div className="row py-4">
+							<div className="col-auto">
+								<BigNumber>03</BigNumber>
+							</div>
+							<div className="col d-flex align-items-center">
+								<h4 className="col d-flex align-items-center">Do things</h4>
+							</div>
 						</div>
 					</div>
 				</div>

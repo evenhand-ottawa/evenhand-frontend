@@ -1,65 +1,41 @@
 import PropTypes from 'prop-types'
 
-const topics = [
-	'Machine Learning',
-	'Diversity Inclusion',
-	'JavaScript',
-	'Politics',
-	'Pokemon',
-]
+import User1 from '../images/users/1.png'
+import User2 from '../images/users/2.png'
+import User3 from '../images/users/3.png'
+import User4 from '../images/users/4.png'
+import User5 from '../images/users/5.png'
 
-function randomTopics() {
-	return [...new Array(3 + Math.round(Math.random() * 2))].map(() => {
-		return topics[Math.floor(topics.length * Math.random())]
-	})
+const images = [User1, User2, User3, User4, User5]
+
+function pickRandom(list) {
+	return list[Math.floor(Math.random() * list.length)]
+}
+
+function makeUser() {
+	return {
+		id: String(Math.random()),
+		name: pickRandom(['Person A', 'Person B', 'Person C']),
+		image: pickRandom(images),
+		speaker_topics: makeItems(3, 5, () =>
+			pickRandom([
+				'Machine Learning',
+				'Diversity Inclusion',
+				'JavaScript',
+				'Politics',
+				'Pokemon',
+			]),
+		),
+	}
+}
+
+function makeItems(min, max, map) {
+	return [...new Array(min + Math.round(Math.random() * (max - min)))].map(map)
 }
 
 export const Speaker = {
-	search: () =>
-		Promise.resolve([
-			{
-				id: '0',
-				name: 'Jane Smith',
-			},
-			{
-				id: '1',
-				name: 'Someone else',
-			},
-			{
-				id: '2',
-				name: 'Another Person',
-			},
-		]),
-	getTrending: () =>
-		Promise.resolve([
-			{
-				id: '0',
-				name: 'Jane Smith',
-				image: `https://randomuser.me/api/portraits/women/${Math.round(
-					Math.random() * 80,
-				)}.jpg`,
-				speaker_topics: randomTopics(),
-				tagline: 'Tagline',
-			},
-			{
-				id: '1',
-				name: 'Someone else',
-				image: `https://randomuser.me/api/portraits/women/${Math.round(
-					Math.random() * 80,
-				)}.jpg`,
-				speaker_topics: randomTopics(),
-				tagline: 'Tagline',
-			},
-			{
-				id: '2',
-				name: 'Another Person',
-				image: `https://randomuser.me/api/portraits/women/${Math.round(
-					Math.random() * 80,
-				)}.jpg`,
-				speaker_topics: randomTopics(),
-				tagline: 'Tagline',
-			},
-		]),
+	search: () => Promise.resolve(makeItems(3, 5, () => makeUser())),
+	getTrending: () => Promise.resolve(makeItems(3, 5, () => makeUser())),
 }
 
 export const SpeakerType = PropTypes.shape({
