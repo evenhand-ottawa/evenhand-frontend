@@ -5,6 +5,9 @@
 $color-primary: #0B6A5B;
 $color-secondary: #FFCECE;
 
+@import "_footer.scss";
+
+
 .bg-light {
 	background-color: #fff8f4 !important;
 }

@@ -1,14 +1,15 @@
-// import React from 'react'
+import React from 'react'
 
 export function Footer() {
-	// return (
-	// 	<footer>
-	// 		<div style={footerStyle}>
-	// 			<div className="container">
-	// 				<h2>EvenHand Footer</h2>
-	// 			</div>
-	// 		</div>
-	// 	</footer>
-	// )
-	return null
+	return (
+
+        <footer>
+            <div className="footer">
+                <div className="container mt-5 py-5">
+                    <h2>EvenHand Footer</h2>
+                </div>
+            </div>
+        </footer>
+
+    )
 }
