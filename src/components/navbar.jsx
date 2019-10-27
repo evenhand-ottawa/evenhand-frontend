@@ -1,11 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import Logo from '../images/logo/even_hand_transparent.png'
 
 export function NavBar() {
+	const location = useLocation()
+
 	return (
-		<nav className="navbar navbar-expand-md py-4 absolute-top w-100">
+		<nav
+			className={
+				'navbar navbar-expand-md py-4 w-100' +
+				(location.pathname === '/login' || location.pathname === '/register'
+					? ' absolute-top'
+					: '')
+			}
+		>
 			<div className="container">
 				<h2 className="sr-only">EvenHand Navigation Menu</h2>
 

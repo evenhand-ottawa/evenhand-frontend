@@ -3,7 +3,7 @@
 // 
 
 $color-primary: #0B6A5B;
-$color-secondary: #F59388;
+$color-secondary: #FFCECE;
 
 .bg-light {
 	background-color: #fff8f4 !important;
@@ -25,7 +25,7 @@ h2, h3, h4, .btn {
 	line-height: 1;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .text-serif {
 	font-family: 'Butler Medium', serif;
 }
 
@@ -94,10 +94,6 @@ h4 {
 	border-color: $color-primary;
 }
 
-.text-primary {
-	color: $color-primary !important;
-}
-
 .bg-secondary {
 	background-color: $color-secondary !important;
 }
@@ -117,8 +113,13 @@ input[type="text"].form-control {
 }
 
 .badge-secondary {
+	color: #000;
 	border-color: $color-secondary;
 	background-color: $color-secondary;
+	border-radius: 2rem;
+	text-transform: lowercase;
+	margin-bottom: .75rem;
+	font-weight: normal;
 }
 
 .bg-curve {
@@ -163,4 +164,29 @@ input[type="text"].form-control {
 // Phil's hacky CSS
 .rounded-corners {
 	border-radius: 15px;
+}
+
+.input-group-rounded {
+	border-radius: 3rem;
+}
+
+.input-group-rounded  input {
+	border-top-left-radius: 2rem !important;
+	border-bottom-left-radius: 2rem !important;
+}
+
+.input-group-rounded .input-group-append .btn {
+	padding-left: 1.75rem;
+}
+
+.shadow-sm {
+	box-shadow: 0 0 .75rem rgba(0,0,0,.075)!important;
+}
+
+.text-primary {
+	color: #4F57CC !important;
+}
+
+.text-muted {
+	color: #5E5E5E !important;
 }

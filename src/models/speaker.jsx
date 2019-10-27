@@ -26,6 +26,8 @@ function makeUser() {
 				'Pokemon',
 			]),
 		),
+		tagline:
+			'Zainab Muse is an award-winning entrepreneur, process designer, interactive digital media expert, author and filmmaker. She is the founder & CEO of Wingd Inc. and Creatorland.',
 	}
 }
 
@@ -34,7 +36,7 @@ function makeItems(min, max, map) {
 }
 
 export const Speaker = {
-	search: () => Promise.resolve(makeItems(3, 5, () => makeUser())),
+	search: () => Promise.resolve(makeItems(15, 20, () => makeUser())),
 	getTrending: () => Promise.resolve(makeItems(3, 5, () => makeUser())),
 }
 
