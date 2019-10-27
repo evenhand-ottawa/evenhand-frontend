@@ -1,23 +1,47 @@
 import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 import Logo from '../images/logo/even_hand_transparent.png'
 
-console.log(Logo)
-
 export function NavBar() {
+	const location = useLocation()
+
 	return (
-		<nav className="navbar py-3 py-md-5">
-			<h2 className="sr-only">EvenHand Navigation Menu</h2>
+		<nav
+			className={
+				'navbar navbar-expand-md py-4 w-100' +
+				(location.pathname === '/login' || location.pathname === '/register'
+					? ' absolute-top'
+					: '')
+			}
+		>
+			<div className="container">
+				<h2 className="sr-only">EvenHand Navigation Menu</h2>
 
-			<a className="navbar-brand" href="#">
-				<img src={Logo} width="175px" alt="Evenhand Logo" />
-			</a>
+				<Link className="navbar-brand" to="/">
+					<img src={Logo} width="175px" alt="Evenhand Logo" />
+				</Link>
 
-			<form className="form-inline">
-				<button className="btn btn-outline-primary" type="button">
-					I Am a Speaker
+				<button
+					className="navbar-toggler"
+					type="button"
+					data-toggle="collapse"
+					data-target="#navbarCollapse"
+					aria-controls="navbarCollapse"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span className="navbar-toggler-icon"></span>
 				</button>
-			</form>
+
+				<div className="navbar-collapse collapse" id="navbarCollapse">
+					<form className="form-inline ml-auto">
+						<Link className="btn btn-primary" to="/login">
+							I Am a Speaker
+						</Link>
+					</form>
+				</div>
+			</div>
 		</nav>
 	)
 }

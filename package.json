@@ -20,6 +20,8 @@
 		"prettier": "^1.18.2"
 	},
 	"dependencies": {
+		"@emotion/core": "^10.0.22",
+		"@emotion/styled": "^10.0.22",
 		"@fortawesome/fontawesome-free": "^5.11.2",
 		"bootstrap": "^4.3.1",
 		"css": "^2.2.4",

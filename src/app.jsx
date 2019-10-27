@@ -11,6 +11,7 @@ import { Home } from './components/home'
 import { Search } from './components/search'
 import { NavBar } from './components/navbar'
 import { Footer } from './components/footer'
+import { Login } from './components/login/login'
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 			<Switch>
 				<Route exact path="/" component={Home} />
 				<Route exact path="/search" component={Search} />
+				<Route exact path="/login" component={Login} />
 			</Switch>
 			<Footer />
 		</Router>
