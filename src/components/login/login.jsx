@@ -21,7 +21,7 @@ export function Login() {
 			<div className="container">
 				<div className="row justify-content-center">
 					<div className="col col-md-8 min-h-100vh d-flex align-items-center justify-content-center">
-						<div className="card w-100 p-5 shadow rounded-lg">
+						<div className="no-card-sm card w-100 p-5 shadow rounded-lg">
 							<div className="card-body">
 								<h1
 									css={css`
@@ -39,7 +39,7 @@ export function Login() {
 								)}
 
 								<form
-									className="px-5"
+									className="px-md-5"
 									onSubmit={evt => {
 										evt.preventDefault()
 										loginActions.fetch({

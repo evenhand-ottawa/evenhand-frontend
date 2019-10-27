@@ -150,3 +150,12 @@ input[type="text"].form-control {
 .min-h-100vh {
 	min-height: 100vh;
 }
+
+@media (max-width: 767px) {
+	.no-card-sm {
+		padding: 0 !important;
+		background: transparent;
+		border: none;
+		box-shadow: none !important;
+	}
+}
